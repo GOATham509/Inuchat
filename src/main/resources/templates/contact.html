@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://ww.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">INUCHAT <img src="/images/aaa.png" alt="Avatars" class="imaj"></div>
+         
+        <nav>
+            <ul>
+                <li><a href="#">contact</a></li>
+                <li><a href="Logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        <section class="contact-list">
+            <h1>Liste Contacts</h1>
+            <div id="contact" th:each="user : ${Users}">
+                <form  action="chat" >  
+                        <input type="text" th:value='${user.nom+" "+user.prenom}' disabled="true" >
+                    <input type="number" th:value='${user.id}' name="id" readonly style="display:none">
+                    <input type="submit" value='Text'>
+                </form>
+            </div>
+        </section>
+        <section class="contact-details" id="contact-details">
+            <h2><Details sur vos contacts></Details></h2>
+             <p>User Session</p><br>
+              <table>
+                   <tr>
+                      <td>Nom  </td><td th:text="' : '+${userSession.nom}"></td>
+                      <td>Prenom  </td><td th:text="' : '+${userSession.prenom}"></td>
+                  </tr>
+                  <tr>
+                   <tr>
+                      <td>Domaine</td><td th:text="' : '+${userSession.domaine}"></td>
+                      <td>Sexe</td><td th:text="' : '+${userSession.sexe}"></td>
+                  </tr>
+                      <td>Numero</td><td th:text="' : '+${userSession.numero}"></td>
+                      <td>Mail </td><td th:text="' : '+${userSession.mail}"></td>
+                  </tr>
+              </table>
+        </section>
+    </main>
+</body>
+</html>

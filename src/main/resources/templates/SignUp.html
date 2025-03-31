@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/signUp.css">
+</head>
+<body>
+ 
+    <div class="container">
+        <!-- Sign Up Form -->
+        <div id="signup-form">
+            <center>
+                <h2>Inscrit</h2>
+                <img src="/images/OIP.jpg" alt="" width="60" height="60">
+                <p th:text="${message1}" style="color:green"></p>
+                <p th:text="${message2}" style="color:red"></p>
+            </center>
+            <form action="Sign" method="POST">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Nom <input type="text" name="nom" placeholder="Nom Utilisateur" required></td>
+                            <td>Prenom <input type="text" name="prenom" placeholder="Prenom utilisateur" required></td>
+                        </tr>
+                        <tr>
+                            <td><table>
+                    <tr>
+                        <td>Homme <input type="radio" name="sexe" value="M" checked></td>
+                        <td>Femme <input type="radio" name="sexe" value="F"></td>
+                    </tr>
+                </table></td>
+                            <td>Profil<input type="file" accept="image/*" id="foto" name="profil" required></td>
+                        </tr>
+                        <tr>
+                            <td>Numero <input type="number" name="numero" placeholder="Numero" required></td>
+                            <td>Mail <input type="email" name="mail" placeholder="E-mail" required></td>
+                        </tr>
+                        <tr>
+                            <td>date naissance<input type="date" name="naissance" required></td>
+                            <td>Domaine
+                                <select name="domaine" required>
+                                    <option>Sc Info</option>
+                                    <option>Sc Admi</option>
+                                    <option>Genie</option>
+                                    <option>Sc Juridique</option>
+                                    <option>Gestion</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Mot de passe<input type="password" name="password" placeholder="Mot de passe" required></td>
+                            <td>Confirmer le mot de passe<input type="password" name="password2" placeholder="Mot de passe" required></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <button type="submit">Creer un compte</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ccc;
+    margin: 20px;
+    padding: 0;
+}
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color:#007bff;
+    color: #fff;
+}
+
+.header .nav-top {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav-top img {
+    width: 10px;
+    margin-right: 10px;
+}
+
+.header .user-info p {
+    margin: 0;
+}
+
+.header .call-icons img {
+    width: 25px;
+    margin-left: 10px;
+}
+
+.chat-content {
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+}
+
+.message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-family:initial;
+}
+
+.message.left {
+    justify-content: flex-start;
+    color:black;
+}
+
+.message.right {
+    justify-content: flex-end;
+}
+
+.message img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5%;
+    margin-right: 10px;
+}
+
+.message p {
+    background-color: #e2e2e2;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0;
+}
+
+.message.right p {
+    background-color:dodgerblue;
+    color: #fff;
+}
+
+.message.left p {
+    background-color: #e2e2e2;;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+}
+
+.attachment-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.attachment-icon img {
+    width: 80%;
+    height: 80%;
+}
+
+.input-group {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.input-group textarea {
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    resize: none;
+}
+
+.input-group img {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.send-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.send-button img {
+    width: 30px;
+    height: 30px;
+}

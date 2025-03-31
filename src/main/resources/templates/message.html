@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion</title>
+    <link rel="stylesheet" href="css/styles.css" >
+</head>
+<body>
+
+<div class="chat-container">
+    <div class="header">
+        <div class="nav-top">
+              <a href="dash"><img src="/images/ddf.png" alt="Retour"></a>
+               <p>Retour</p>
+        </div>
+        
+        <div class="user-info">
+            
+            <p th:text="${nameR}"><img src='/images/avatar2.JPG' alt='profil'> Geo-Anderlecht</p>
+            <p>En ligne</p> 
+        </div>
+
+        <div class="call-icons">
+            <img src="/images/phone.PNG" alt="Appel">
+            <img src="/images/video.png" alt="Vidéo">
+        </div>
+    </div>
+
+    <div class="chat-content">
+        
+        <span th:each="mesaj : ${chats}">
+            <span th:if="${userSession.Id == mesaj.em}">
+                <div class="message right">
+                    <p  th:text="${mesaj.cont}" ></p><br>
+                </div>
+            </span>
+            
+            <span th:unless="${userSession.Id == mesaj.em}">
+                <div class="message left">
+                    <p  th:text="${mesaj.cont}" > </p><br>
+                </div>
+            </span>
+        </span>
+
+    </div>
+
+    <form action="send_message" >
+        <div class="input-container">
+            <div class="attachment-icon">
+                <img src="/images/paperclip.png" alt="Attacher un fichier">
+            </div>
+
+            <div class="input-group">
+                <textarea placeholder="Tapez votre message" minlength="1" maxlength="1400" name='message'></textarea>
+            </div>
+
+            <button class="send-button" type="submit">
+                <img src="/images/th1.PNG" alt="Envoyer">
+            </button>
+        </div>
+    </form>
+
+</div>
+
+</body>
+<!--script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    const input = document.querySelector('textarea');
+    const chatContent = document.querySelector('.chat-content');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const message = input.value.trim();
+
+        if (message) {
+            addMessage('right', '/images/avatar2.JPG', message);
+            input.value = '';
+        }
+    });
+
+    function addMessage(side, avatar, text) {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', side);
+        
+        const img = document.createElement('img');
+        img.src = avatar;
+        img.alt = 'Avatar';
+
+        const p = document.createElement('p');
+        p.textContent = text;
+
+        messageDiv.appendChild(img);
+        messageDiv.appendChild(p);
+        chatContent.appendChild(messageDiv);
+        chatContent.scrollTop = chatContent.scrollHeight;
+    }
+});
+</script-->
+
+</html>
